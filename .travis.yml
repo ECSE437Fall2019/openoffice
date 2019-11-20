@@ -1,0 +1,17 @@
+branches:
+  only:
+    - test
+
+language: minimal
+
+install:
+  - sudo apt-get build-dep openoffice.org
+
+script:
+  - cd aoo/main
+  - autoconf
+  - ./configure <configure_switches>
+  - ./bootstrap
+  - source *.set.sh
+  - cd instsetoo_native
+  - build --all
