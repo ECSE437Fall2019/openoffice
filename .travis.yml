@@ -15,6 +15,7 @@ script:
   - autoconf
   - ./configure --with-dmake-url=https://sourceforge.net/projects/oooextras.mirror/files/dmake-4.12.tar.bz2 --with-epm-url=https://sourceforge.net/projects/oooextras.mirror/files/epm-3.7.tar.gz
   - ./bootstrap
+  - cat LinuxX86-64Env.Set.sh
   - source LinuxX86-64Env.Set.sh
   - cd instsetoo_native
   - build --all
