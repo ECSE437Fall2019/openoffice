@@ -17,7 +17,7 @@ before_script:
   - ./bootstrap
   - cat LinuxX86-64Env.Set.sh
   - source LinuxX86-64Env.Set.sh
-  - cd instsetoo_native
   
 script:
+  - cd instsetoo_native
   - build --all
