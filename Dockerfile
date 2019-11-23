@@ -19,7 +19,7 @@ CMD sudo apt-get update &&\
     sudo apt-get install junit &&\
     sudo apt-get install junit4 &&\
     sudo apt-get install libidl-dev &&\ 
-    sudo apt-get install autoconf &&\
+    sudo apt-get install dh-autoconf &&\
     sudo apt-get install liborbit2-dev
 RUN mkdir -p /home/openoffice 
 WORKDIR /home/openoffice
