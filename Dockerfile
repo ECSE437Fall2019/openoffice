@@ -21,10 +21,10 @@ CMD sudo apt-get update &&\
     sudo apt-get install libidl-dev &&\ 
     sudo apt-get install liborbit2-dev
 RUN 
-    cd aoo/main &&\
-    autoconf &&\
-    ./configure <configure_switches> &&\
-    ./bootstrap &&\
-    source *.set.sh &&\
-    cd instsetoo_native &&\
+    cd aoo/main \ 
+    && autoconf \
+    && ./configure <configure_switches> \ 
+    && ./bootstrap \ 
+    && source *.set.sh \ 
+    && cd instsetoo_native \ 
     build --all
