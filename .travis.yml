@@ -3,7 +3,9 @@ dist: bionic
 sudo: true
 
 
-install:./install.sh
+install:
+   - chmod +x install.sh
+   - ./install.sh
 
 before_script:
   - autoconf
