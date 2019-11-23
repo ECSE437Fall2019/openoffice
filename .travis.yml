@@ -20,4 +20,4 @@ before_script:
   - cd instsetoo_native
   
 script:
-  - build --all
+  - build --all > /dev/null
