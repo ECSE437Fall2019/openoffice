@@ -3,11 +3,9 @@ dist: bionic
 sudo: true
 
 
-
 script:
   - chmod +x install.sh
   - ./install.sh
-
 
 before_script:
   - autoconf
@@ -19,4 +17,4 @@ before_script:
   
   
 script:
-build --from util --prepare
+  -build --from util --prepare
