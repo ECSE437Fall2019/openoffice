@@ -1,3 +1,11 @@
 language: generic
 dist: bionic
 sudo: true
+
+jdk:
+  - openjdk11
+  - openjdk-ea
+
+matrix:
+  allow_failures:
+    - jdk: openjdk-ea
