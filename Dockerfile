@@ -23,7 +23,7 @@ CMD sudo apt-get update &&\
 RUN mkdir -p /home/openoffice 
 WORKDIR /home/openoffice
 ADD . ./openoffice
-RUN cd main 
+RUN cd openoffice/main 
 RUN autoconf 
 RUN ./configure <configure_switches> 
 RUN ./bootstrap 
