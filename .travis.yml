@@ -2,5 +2,5 @@ os: ubuntu
 language: cpp
 services: docker
 script:
-  sudo docker build -t openoffice
+  sudo docker build -t openoffice .
 
