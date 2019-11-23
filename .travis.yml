@@ -1,6 +1,5 @@
-language: generic
-dist: bionic
-sudo: true
+language: minimal
+sudo: required
 
 install:
   - sudo apt-get install g++ gcc bison flex libarchive-zip-perl libcups2-dev libpam0g-dev gperf libfreetype6-dev libxaw7-dev libfontconfig1-dev libxrandr-dev patch libgconf2-dev libgnomevfs2-dev ant libgtk2.0-dev junit junit4 libidl-dev liborbit2-dev
@@ -15,8 +14,7 @@ before_script:
   - ./bootstrap
   - shopt -s expand_aliases
   - source LinuxX86-64Env.Set.sh
-  - cd ..
-  
+  - cd instsetoo_native
   
 script:
-  - cd ../test && ant
+  - build --all -P8 -- -P8 > /dev/null
