@@ -20,11 +20,13 @@ CMD sudo apt-get update &&\
     sudo apt-get install junit4 &&\
     sudo apt-get install libidl-dev &&\ 
     sudo apt-get install liborbit2-dev
-RUN 
-    cd aoo/main \ 
-    && autoconf \
-    && ./configure <configure_switches> \ 
-    && ./bootstrap \ 
-    && source *.set.sh \ 
-    && cd instsetoo_native \ 
-    build --all
+RUN mkdir -p /home/openoffice 
+WORKDIR /home/openoffice
+ADD . ./openoffice
+RUN cd main 
+RUN autoconf 
+RUN ./configure <configure_switches> 
+RUN ./bootstrap 
+RUN source *.set.sh 
+RUN cd instsetoo_native 
+RUN build --all
