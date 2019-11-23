@@ -49,4 +49,4 @@ before_install:
     - eval "${MATRIX_EVAL}"      
     - sudo apt-get update
     - sudo apt-get -y install libxml2-dev
-      
+    - gem install bundler
