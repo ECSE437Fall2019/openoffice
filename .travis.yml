@@ -17,4 +17,5 @@ before_script:
   - ./bootstrap
   
 script:
+  - chmod +x install.sh
   - ./install.sh
