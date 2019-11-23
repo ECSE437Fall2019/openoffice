@@ -15,8 +15,8 @@ before_script:
   - ./bootstrap
   - shopt -s expand_aliases
   - source LinuxX86-64Env.Set.sh
-  - cd instsetoo_native/util
+  - cd ..
   
   
 script:
-  -  make -f makefile.mk
+  - cd ../test && ant
