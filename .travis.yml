@@ -6,6 +6,7 @@ git:
 
 deploy:
   provider: releases
+  api_key: 702bafbeb4b9c69f21aae0fcf337f39c1e84629b
   script: ./script.sh
   on:
     branch: test_release
