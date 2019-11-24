@@ -17,7 +17,7 @@ addons:
   sonarcloud:
     organization: "ecse437fall2019"
     token:
-      secure: "a18099c9e216b38ce99f76ef6493d87231a0f39d"
+      secure: "ea16aa21215300e3119200d3513a0a304016101d"
 
 jdk:
   - oraclejdk8
