@@ -9,5 +9,7 @@ deploy:
   provider: releases
   api_key: 702bafbeb4b9c69f21aae0fcf337f39c1e84629b
   file: script.sh
+  on:
+      branches: test_release
   skip_cleanup: true
   draft: true
