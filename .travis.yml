@@ -25,6 +25,4 @@ jdk:
 
 script:
     - jdk_switcher use openjdk8
-    - export JAVA_HOME=$HOME/openjdk8
-    - $TRAVIS_BUILD_DIR/install-jdk.sh --install openjdk8 --target $JAVA_HOME
     - sonar-scanner
