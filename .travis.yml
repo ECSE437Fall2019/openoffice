@@ -1,5 +1,6 @@
 language: minimal
 sudo: true
+dist: bionic
 
 git:
   autocrlf: input
