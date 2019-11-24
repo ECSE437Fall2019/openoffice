@@ -20,5 +20,5 @@ before_script:
   - cd instsetoo_native
   
 script:
-  - "travis_wait 50 sleep 1800 &"
+  - travis_wait 50 
   - build --all -P8 -- -P8 > /dev/null 2>&1
