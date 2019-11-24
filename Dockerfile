@@ -25,7 +25,7 @@ RUN mkdir -p /home/openoffice
 WORKDIR /home/openoffice
 ADD . ./openoffice
 RUN cd openoffice/main 
-RUN ./configure <configure_switches> 
+RUN ./configure --with-dmake-url=https://sourceforge.net/projects/oooextras.mirror/files/dmake-4.12.tar.bz2 --with-epm-url=https://sourceforge.net/projects/oooextras.mirror/files/epm-3.7.tar.gz
 RUN ./bootstrap 
 RUN source *.set.sh 
 RUN cd instsetoo_native 
