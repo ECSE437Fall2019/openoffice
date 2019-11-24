@@ -10,6 +10,9 @@ install:
   - sudo apt-get install default-jdk ant-optional
   - sudo apt-get install zip unzip
   - cd main && wget -O external/unowinreg/unowinreg.dll https://tools.openoffice.org/unowinreg_prebuild/680/unowinreg.dll
+  - while sleep 9m; do echo "=====[ $SECONDS seconds still running ]====="; done &
+  - long-living-command
+  - kill %1
 
 before_script:
   - autoconf
@@ -20,5 +23,4 @@ before_script:
   - cd instsetoo_native
   
 script:
-  -./test.sh
   - build --all -P8 -- -P8 > /dev/null 2>&1
