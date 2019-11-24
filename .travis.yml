@@ -19,6 +19,9 @@ addons:
     token:
       secure: "a18099c9e216b38ce99f76ef6493d87231a0f39d" 
 
+jdk:
+  - oraclejdk8
+
 sonarqube:
     branches :
     - sonar_test
