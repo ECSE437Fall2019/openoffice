@@ -1,15 +1,30 @@
 language: minimal
-sudo: true
-dist: bionic
+sudo: required
+dist:trusty
 
 git:
   autocrlf: input
 
-deploy:
-  provider: releases
-  api_key: 702bafbeb4b9c69f21aae0fcf337f39c1e84629b
-  file: script.sh
-  on:
-      branch: test_release
-  skip_cleanup: true
-  draft: true
+install:
+  - sudo apt-get install g++ gcc bison flex libarchive-zip-perl libcups2-dev libpam0g-dev gperf libfreetype6-dev libxaw7-dev libfontconfig1-dev libxrandr-dev patch libgconf2-dev libgnomevfs2-dev ant libgtk2.0-dev junit junit4 libidl-dev liborbit2-dev
+  - sudo apt-get install libarchive-zip-perl libxml-parser-perl libwww-perl perl liblwp-protocol-https-perl
+  - sudo apt-get install default-jdk ant-optional
+  - sudo apt-get install zip unzip
+  - cd main && wget -O external/unowinreg/unowinreg.dll https://tools.openoffice.org/unowinreg_prebuild/680/unowinreg.dll 
+
+addons:
+  sonarcloud:
+    organization: "ecse437fall2019"
+    token:
+      secure: "a18099c9e216b38ce99f76ef6493d87231a0f39d" # encrypted value of your token
+
+script:
+  - make clean
+  # Wraps the compilation with the Build Wrapper to generate configuration (used
+  # later by the SonarQube Scanner) into the "bw-output" folder
+  - build-wrapper-linux-x86-64 --out-dir bw-output make all
+  # Execute some tests
+  - make test
+  # And finally run the SonarQube analysis - read the "sonar-project.properties"
+  # file to see the specific configuration
+  - sonar-scanner
