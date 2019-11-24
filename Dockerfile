@@ -25,7 +25,6 @@ RUN mkdir -p /home/openoffice
 WORKDIR /home/openoffice
 ADD . ./openoffice
 RUN cd openoffice/main 
-RUN autoconf 
 RUN ./configure <configure_switches> 
 RUN ./bootstrap 
 RUN source *.set.sh 
