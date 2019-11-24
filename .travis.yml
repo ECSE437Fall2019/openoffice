@@ -8,6 +8,6 @@ deploy:
   provider: releases
   script: ./script.sh
   on:
-    branch: test_releaser
+    branch: test_release
   skip_cleanup: true
   draft: true
