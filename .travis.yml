@@ -16,7 +16,7 @@ addons:
   sonarcloud:
     organization: "ecse437fall2019"
     token:
-      secure: "a18099c9e216b38ce99f76ef6493d87231a0f39d" # encrypted value of your token
+      secure: "a18099c9e216b38ce99f76ef6493d87231a0f39d" n
 
 script:
   - sonar-scanner
