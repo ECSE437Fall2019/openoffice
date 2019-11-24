@@ -1,5 +1,6 @@
-FROM ubuntu 
+FROM ubuntu:18.04
 CMD sudo apt-get update &&\
+    sudo apt-get install autoconf &&\
     sudo apt-get install g++ &&\
     sudo apt-get install gcc &&\
     sudo apt-get install bison &&\
@@ -19,12 +20,12 @@ CMD sudo apt-get update &&\
     sudo apt-get install junit &&\
     sudo apt-get install junit4 &&\
     sudo apt-get install libidl-dev &&\ 
-    sudo apt-get install dh-autoconf &&\
     sudo apt-get install liborbit2-dev
 RUN mkdir -p /home/openoffice 
 WORKDIR /home/openoffice
 ADD . ./openoffice
 RUN cd openoffice/main 
+RUN autoconf 
 RUN ./configure --with-dmake-url=https://sourceforge.net/projects/oooextras.mirror/files/dmake-4.12.tar.bz2 --with-epm-url=https://sourceforge.net/projects/oooextras.mirror/files/epm-3.7.tar.gz
 RUN ./bootstrap 
 RUN source *.set.sh 
