@@ -27,4 +27,5 @@ sonarqube:
     - sonar_test
 script:
     - jdk_switcher use oraclejdk8
+    - export JAVA_HOME=$HOME/oraclejdk8
     - sonar-scanner
