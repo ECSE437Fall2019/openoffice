@@ -1,6 +1,6 @@
 dist: trusty
-language: minimal
-sudo: required
+language: java
+sudo: true
 
 
 git:
@@ -26,7 +26,5 @@ sonarqube:
     branches :
     - sonar_test
 script:
-    - make clean
-    - build-wrapper-linux-x86-64 --out-dir bw-output make all
-    - make test
+    - jdk_switcher use oraclejdk8
     - sonar-scanner
