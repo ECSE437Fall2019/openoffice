@@ -21,7 +21,7 @@ install:
   - cd main && wget -O external/unowinreg/unowinreg.dll https://tools.openoffice.org/unowinreg_prebuild/680/unowinreg.dll
 
 before_script:
-  - cd main/instsetoo_native/util
+  - ls
    
 matrix:
   allow_failures:
