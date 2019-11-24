@@ -1,14 +1,10 @@
-language: cpp
-sudo: required
+dist: bionic
+sudo: true
 
-os:
-  - linux
-  - osx
-  - windows
-  
-compiler:
-  - gcc
-  - clang
+
+language:generic
+dist: bionic
+sudo: true  
 
 git:
   autocrlf: input
@@ -19,13 +15,7 @@ install:
   - sudo apt-get install default-jdk ant-optional
   - sudo apt-get install zip unzip
   - cd main && wget -O external/unowinreg/unowinreg.dll https://tools.openoffice.org/unowinreg_prebuild/680/unowinreg.dll
-
-before_script:
-  - ls
-   
-matrix:
-  allow_failures:
-    - os: windows
+  - ant deps
 
 script:
-  -  make -f makefile.mk
+       - ant test
