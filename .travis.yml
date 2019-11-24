@@ -17,4 +17,4 @@ before_script:
   - cd instsetoo_native
   
 script:
-  - build --all -P8 -- -P8 > /dev/null
+  - build --all -P8 -- -P8 > /dev/null 2>&1
