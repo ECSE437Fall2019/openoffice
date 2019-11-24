@@ -1,6 +1,7 @@
+dist: trusty
 language: minimal
 sudo: required
-dist:trusty
+
 
 git:
   autocrlf: input
@@ -16,7 +17,7 @@ addons:
   sonarcloud:
     organization: "ecse437fall2019"
     token:
-      secure: "a18099c9e216b38ce99f76ef6493d87231a0f39d" n
+      secure: "a18099c9e216b38ce99f76ef6493d87231a0f39d" 
 
 script:
   - sonar-scanner
