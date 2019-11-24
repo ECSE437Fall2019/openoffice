@@ -13,7 +13,7 @@ install:
   - cd main && wget -O external/unowinreg/unowinreg.dll https://tools.openoffice.org/unowinreg_prebuild/680/unowinreg.dll
 
 deploy:
-  provider: scripts
+  provider: script
   script: ./script.sh
   on:
     branch: test_release
