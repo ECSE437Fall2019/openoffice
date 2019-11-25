@@ -13,16 +13,4 @@ install:
   - sudo apt-get install zip unzip
   - cd main && wget -O external/unowinreg/unowinreg.dll https://tools.openoffice.org/unowinreg_prebuild/680/unowinreg.dll
 
-addons:
-  sonarcloud:
-    organization: "ecse437fall2019"
-    token:
-      secure: "ea16aa21215300e3119200d3513a0a304016101d"
 
-jdk:
-  - oraclejdk8
-  - openjdk8
-
-script:
-    - jdk_switcher use openjdk8
-    - sonar-scanner
